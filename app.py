@@ -15,10 +15,6 @@ app.secret_key = 'jose'
 api = Api(app)
 
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
 
 jwt = JWT(app, authenticate, identity)  # /auth      We send it a username and password which gets passed to authenticate if it matches we return "user"
 
